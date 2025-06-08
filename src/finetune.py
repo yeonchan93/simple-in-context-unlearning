@@ -170,3 +170,4 @@ def finetune():
     model.save_pretrained(args.output_dir)
     tokenizer.save_pretrained(args.output_dir)
     print("Finetuning complete.")
+    return args.output_dir
