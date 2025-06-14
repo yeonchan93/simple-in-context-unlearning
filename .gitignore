@@ -195,6 +195,12 @@ cython_debug/
 .cursorindexingignore
 
 unsloth_compiled_cache/
-finetuned_llama3_yelp/
 huggingface_tokenizers_cache/
+finetuned_llama_paper/
+finetuned_llama_project/
 wandb/
+hf_cache/
+batch_input*
+batch_output*
+icul_results*
+cloudflared*

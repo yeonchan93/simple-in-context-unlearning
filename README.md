@@ -8,12 +8,13 @@ Colab에서 다음 코드를 실행하여 환경을 준비하세요.
 
 ```python
 !pip install colab_ssh --upgrade
-!pip install unsloth
 from colab_ssh import launch_ssh_cloudflared, init_git_cloudflared
 launch_ssh_cloudflared(password="")
 ```
 
 위의 명령어만 실행하면 환경 준비가 완료됩니다.
+
+![Colab 환경 설정 예시](assets/colab_settings.png)
 
 ## VSCode에서 원격 접속
 
@@ -27,8 +28,12 @@ launch_ssh_cloudflared(password="dev")
 이후, VSCode의 Remote-SSH 확장 기능을 사용하여 제공된 호스트 정보로 접속하면 Colab 환경에서 직접 코드를 편집할 수 있습니다.
 
 ---
+**실행 전 반드시 `pip install -r requirements.txt` 명령어를 실행해야 합니다.**
 
 ## 주요 스크립트 설명
+
+- [`src/dataset.py`](dev/simple-in-context-unlearning/src/dataset.py):
+  OpenAI API를 이용해 합성 의료 데이터셋을 생성하고, batch 결과를 CSV 파일로 변환합니다.
 
 - [`src/finetune.py`](dev/simple-in-context-unlearning/src/finetune.py):  
   Unsloth efficient finetuning 라이브러리를 사용하여 주어진 데이터셋에 대해 모델을 파인튜닝합니다.
