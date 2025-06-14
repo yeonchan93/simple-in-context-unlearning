@@ -31,7 +31,6 @@ launch_ssh_cloudflared(password="dev")
 **실행 전 반드시 `pip install -r requirements.txt` 명령어를 실행해야 합니다.**
 
 ## 주요 스크립트 설명
-
 - [`src/dataset.py`](dev/simple-in-context-unlearning/src/dataset.py):
   OpenAI API를 이용해 합성 의료 데이터셋을 생성하고, batch 결과를 CSV 파일로 변환합니다.
 
@@ -42,7 +41,14 @@ launch_ssh_cloudflared(password="dev")
   파인튜닝된 모델에 대해 In-Context Unlearning을 적용합니다. 평가를 수행하고 결과를 CSV 파일로 출력합니다.
 
 ---
+## 프로젝트 실행
+프로젝트는 `python main.py` 명령어와 다양한 인자를 통해 실행할 수 있습니다.
 
+- `--type`: `paper`(논문 구현) 또는 `project`(커스텀 데이터셋) 중 선택할 수 있습니다.
+- `--task`: `dataset`(커스텀 데이터셋 구축), `finetune`(파인튜닝 진행), `eval`(언러닝 평가) 중 선택할 수 있습니다.
+- `--n_ctxt`: context의 개수를 의미합니다. 예를 들어 3이면 언러닝할 데이터 1개와 실제 데이터 2개가 프롬프트에 포함됩니다. 5라면 언러닝할 데이터 1개와 실제 데이터 4개가 포함됩니다.
+
+---
 ## 참고 문헌 및 크레딧
 
 ```
