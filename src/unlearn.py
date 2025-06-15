@@ -10,7 +10,7 @@ import torch
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import roc_curve, auc
-from datasets import load_dataset, DatasetDict
+from datasets import load_dataset, DatasetDict, Dataset
 from unsloth import FastLanguageModel
 from transformers import BitsAndBytesConfig
 from tqdm.auto import tqdm
@@ -220,7 +220,7 @@ def unlearn(args, model_dir):
     if args.type == "paper":
         dataset = preprocess_yelp_polarity(args.dataset_size)
     elif args.type == "project":
-        dataset = preprocess_custom_dataset(args.dataset_size)
+        dataset = preprocess_custom_dataset(args.output_dir)
     test_dataset = dataset["test"]
     train_dataset = dataset["train"]
 
